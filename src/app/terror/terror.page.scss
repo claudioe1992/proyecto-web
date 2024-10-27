@@ -1,46 +1,47 @@
 .background-terror {
-  --background: none; /* Elimina el fondo predeterminado de Ionic */
-  background-image: url('/assets/icon/cementerio.jpg'); /* Ruta a tu imagen de fondo */
-  background-size: cover; /* Hace que la imagen cubra todo el fondo */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-  height: 100%; /* Asegura que cubra todo el contenido */
-  display: flex; /* Permite centrar el contenido */
-  flex-direction: column; /* Organiza los elementos en columnas */
-  align-items: center; /* Centra horizontalmente */
-  justify-content: center; /* Centra verticalmente */
-  text-align: center; /* Centra el texto */
+  --background: none;
+  background-image: url('/assets/icon/cementerio.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Usa 100vh para llenar la ventana del navegador */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .audio-controls {
-  display: flex; /* Usa flexbox para organizar los controles */
-  align-items: center; /* Centra los elementos verticalmente */
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
-  padding: 15px; /* Espaciado interno */
-  border-radius: 10px; /* Bordes redondeados */
-  width: 100%;
-  max-width: 400px; /* Limita el ancho */
-  margin: 20px auto; /* Margen externo */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para un efecto elevado */
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columnas */
+  align-items: center; /* Centra horizontalmente */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  width: 90%; /* Ajusta el ancho a un 90% */
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .audio-controls p {
-  margin: 0 10px; /* Espaciado horizontal entre elementos de texto */
-  font-size: 16px; /* Tamaño de fuente */
-  color: #333; /* Color del texto */
+  margin: 5px 0; /* Espaciado vertical entre elementos de texto */
+  font-size: 16px;
+  color: #333;
 }
 
 .play-pause-btn {
   font-size: 20px;
-  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .play-pause-btn:hover {
-  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+  transform: scale(1.1);
 }
 
 .play-pause-btn:active {
-  transform: scale(0.9); /* Reduce el tamaño al hacer clic */
+  transform: scale(0.9);
 }
 
 .time {
@@ -54,5 +55,50 @@
   justify-content: space-around;
   width: 100%;
   max-width: 400px;
-  margin: 20px auto; /* Margen externo */
+  margin: 20px auto;
+}
+
+
+
+.play-pause-btn {
+  --background: #ff4500; /* Color de fondo rojo anaranjado */
+  --color: white; /* Color del texto blanco */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.btn-orange {
+  --background: orange; /* Color de fondo naranja */
+  --color: black; /* Color del texto negro */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.btn-purple {
+  --background: purple; /* Color de fondo morado */
+  --color: white; /* Color del texto blanco */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.btn-green {
+  --background: #32cd32; /* Color de fondo verde */
+  --color: black; /* Color del texto negro */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.btn-black {
+  --background: black; /* Color de fondo negro */
+  --color: orange; /* Color del texto naranja */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+ion-button:hover {
+  opacity: 0.8; /* Efecto de opacidad al pasar el mouse */
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: center top;
+  }
+  100% {
+    background-position: center bottom;
+  }
 }
