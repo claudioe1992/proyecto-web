@@ -1,0 +1,85 @@
+.background-image {
+    --background: none; /* Elimina el fondo predeterminado de Ionic */
+    background-image: url('/assets/icon/pagina3.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100%; /* Asegura que cubra todo el contenido */
+  }
+  
+  .logo-container {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    height: 100%; /* Hace que el contenedor ocupe toda la altura */
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Añade un poco de espacio alrededor */
+  }
+  
+  .logo-image {
+    max-width: 80%; /* Ajusta el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-bottom: 30px; /* Espacio debajo de la imagen */
+  }
+  
+  .menu-button {
+    margin: 10px 0; /* Espacio entre los botones */
+    width: 80%; /* Ancho de los botones */
+    margin-top: 20px;
+    width: 200px;
+    font-size: 18px;
+    text-align: center;
+    --background: #1508c9; /* Fondo blanco */
+    color: white; /* Texto negro */
+    animation: bounce 2s infinite; /* Aplicar la animación de rebote */
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+
+
+ion-card {
+    margin: 10px;
+    width: 80%;
+    background: #423300; /* Fondo blanco */
+    color: rgb(255, 255, 255); /* Texto negro */
+
+    
+  }
+  
+  /* Animaciones para tarjetas */
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .card-animation {
+    animation: zoomIn 2s ease-out;
+  }
+  
+  /* Animaciones para botones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .button-animation {
+    animation: fadeIn 5.5s ease-in-out;
+  }

@@ -1,0 +1,62 @@
+/* src/app/recuperacion/recuperacion.page.scss */
+
+/* General */
+ion-content {
+    --background: #f8f9fa; /* Color de fondo claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Encabezado */
+  ion-header {
+    background: #007bff; /* Color de fondo del encabezado */
+    color: #fff; /* Color del texto del encabezado */
+  }
+  
+  /* Contenido principal */
+  .container {
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff; /* Fondo blanco para el contenido */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  /* Títulos */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Instrucciones */
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    color: #333; /* Color del texto */
+  }
+  
+  /* Botones */
+  ion-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+  }
+  
+  /* Campos del formulario */
+  ion-item {
+    margin-bottom: 15px;
+  }
+  
+  /* Mensaje de error */
+  .error-message {
+    color: #dc3545; /* Color rojo para mensajes de error */
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  

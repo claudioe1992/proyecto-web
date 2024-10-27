@@ -1,0 +1,122 @@
+/* Estilos para el título principal (Ecotronix) */
+ion-title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #A47153;
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+/* Título "Iniciar Sesión" dentro del contenedor */
+.container h2 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para el ion-content con imagen de fondo */
+ion-content {
+  --background: url('/assets/icon/login.jpg') no-repeat center center/cover;
+  background-color: rgba(0, 0, 0, 0.7); /* Capa oscura para mejorar el contraste */
+  padding: 0;
+}
+
+/* Animación para el formulario de login */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para el formulario */
+.login-form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  animation: slideInUp 0.8s ease-out; /* Aplica la animación */
+}
+
+/* Estilos para los campos de entrada */
+ion-item {
+  margin-bottom: 16px;
+}
+
+ion-label {
+  color: #333;
+}
+
+ion-input {
+  --placeholder-color: #888;
+  --background: #000000;
+}
+
+/* Estilo para los botones */
+ion-button {
+  margin-top: 16px;
+}
+
+/* Estilo para el botón de Recuperar Contraseña */
+ion-button[color="light"] {
+  --color: #555;
+  --background: #eee;
+}
+
+/* Mensajes de error */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+/* animacion*/
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(500px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-20px);
+  }
+  80% {
+    transform: scale(0.95) translateY(10px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.login-form {
+  /* Aplicar animación de entrada */
+  animation: bounceIn 1s ease-out, pulse 2s ease-in-out infinite;
+}
