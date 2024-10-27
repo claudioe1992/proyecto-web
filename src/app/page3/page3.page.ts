@@ -17,9 +17,16 @@ export class Page3Page implements OnInit {
   }
 
   navigateToComponent() {
-    console.log("entré línea 20")
-      // Navegar a la página3
-    this.audioService.playSound('assets/sounds/start.mp3');
-    this.navCtrl.navigateForward('/home');  // Aquí se indica la ruta correcta '/pagina2'
-  } 
+    console.log("Comenzar partida clickeado");
+
+    // Reproducir el sonido y navegar a la siguiente página
+    this.audioService.playSound('assets/sounds/start.mp3').then(() => {
+      console.log("Reproducción de sonido iniciada");
+    }).catch(err => {
+      console.error("Error al reproducir sonido:", err);
+    });
+
+    // Navegar a la siguiente página inmediatamente
+    this.navCtrl.navigateForward('/terror');  // Cambia '/page3' a la ruta correcta de tu app
+  }
 }

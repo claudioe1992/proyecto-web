@@ -6,23 +6,20 @@ import { Injectable } from '@angular/core';
 export class AudioService {
   private audioContext: AudioContext;
   private backgroundSound: AudioBufferSourceNode | null = null;
+  private backgroundDuration = 0;
 
   constructor() {
-    // Crear el contexto de audio
     this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
   }
 
-  // Método para asegurarse de que el AudioContext esté activo tras la interacción del usuario
   private async ensureAudioContextRunning() {
     if (this.audioContext.state === 'suspended') {
       await this.audioContext.resume();
     }
   }
 
-  // Reproducir sonido general
   async playSound(url: string) {
-    await this.ensureAudioContextRunning();  // Asegurar que el AudioContext esté activo
-
+    await this.ensureAudioContextRunning();
     const response = await fetch(url);
     const arrayBuffer = await response.arrayBuffer();
     const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer);
@@ -32,31 +29,50 @@ export class AudioService {
     source.start(0);
   }
 
-  // Reproducir música de fondo
   async playBackgroundSound(url: string) {
-    await this.ensureAudioContextRunning();  // Asegurar que el AudioContext esté activo
-
+    await this.ensureAudioContextRunning();
     if (this.backgroundSound) {
-      this.backgroundSound.stop();  // Detener cualquier sonido de fondo previo
+      this.stopBackgroundSound(); // Detener el sonido anterior
     }
-
+    
     const response = await fetch(url);
     const arrayBuffer = await response.arrayBuffer();
     const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer);
 
-    // Crear un nuevo AudioBufferSourceNode para reproducir la música de fondo
+    // Crear un nuevo buffer source
     this.backgroundSound = this.audioContext.createBufferSource();
     this.backgroundSound.buffer = audioBuffer;
-    this.backgroundSound.loop = true;  // Configurar en loop
+    this.backgroundSound.loop = true;
     this.backgroundSound.connect(this.audioContext.destination);
     this.backgroundSound.start(0);
+
+    this.backgroundDuration = audioBuffer.duration;
   }
 
-  // Detener la música de fondo
   stopBackgroundSound() {
     if (this.backgroundSound) {
-      this.backgroundSound.stop();  // Detener la música de fondo
-      this.backgroundSound = null;  // Reiniciar a null después de detener
+      this.backgroundSound.stop();
+      this.backgroundSound = null;
+    }
+  }
+
+  getDuration() {
+    return this.backgroundDuration;
+  }
+
+  getCurrentTime() {
+    return this.audioContext.currentTime;
+  }
+
+  seekTo(time: number) {
+    this.stopBackgroundSound(); // Detener la reproducción actual
+
+    if (this.backgroundSound && this.backgroundSound.buffer) {
+      this.backgroundSound = this.audioContext.createBufferSource();
+      this.backgroundSound.buffer = this.backgroundSound.buffer;
+      this.backgroundSound.connect(this.audioContext.destination);
+      this.backgroundSound.loop = true;
+      this.backgroundSound.start(0, time); // Reproducir desde el tiempo especificado
     }
   }
 }

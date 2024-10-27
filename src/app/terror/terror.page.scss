@@ -1,0 +1,58 @@
+.background-terror {
+  --background: none; /* Elimina el fondo predeterminado de Ionic */
+  background-image: url('/assets/icon/cementerio.jpg'); /* Ruta a tu imagen de fondo */
+  background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100%; /* Asegura que cubra todo el contenido */
+  display: flex; /* Permite centrar el contenido */
+  flex-direction: column; /* Organiza los elementos en columnas */
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  text-align: center; /* Centra el texto */
+}
+
+.audio-controls {
+  display: flex; /* Usa flexbox para organizar los controles */
+  align-items: center; /* Centra los elementos verticalmente */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  width: 100%;
+  max-width: 400px; /* Limita el ancho */
+  margin: 20px auto; /* Margen externo */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para un efecto elevado */
+}
+
+.audio-controls p {
+  margin: 0 10px; /* Espaciado horizontal entre elementos de texto */
+  font-size: 16px; /* Tamaño de fuente */
+  color: #333; /* Color del texto */
+}
+
+.play-pause-btn {
+  font-size: 20px;
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+.play-pause-btn:hover {
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+}
+
+.play-pause-btn:active {
+  transform: scale(0.9); /* Reduce el tamaño al hacer clic */
+}
+
+.time {
+  margin: 0 10px;
+  font-size: 14px;
+  color: black;
+}
+
+.sound-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto; /* Margen externo */
+}

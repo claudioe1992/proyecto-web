@@ -1,11 +1,12 @@
 .background-image {
-    --background: none; /* Elimina el fondo predeterminado de Ionic */
-    background-image: url('/assets/icon/pagina3.jpg'); /* Ruta a tu imagen de fondo */
-    background-size: cover; /* Hace que la imagen cubra todo el fondo */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: 100%; /* Asegura que cubra todo el contenido */
-  }
+  --background: none; /* Elimina el fondo predeterminado de Ionic */
+  background-image: url('/assets/icon/pagina3.jpg'); /* Ruta a tu imagen de fondo */
+  background-size: cover; /* Hace que la imagen cubra todo el fondo */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100%; /* Asegura que cubra todo el contenido */
+}
+  
   
   .logo-container {
     display: flex;
@@ -30,7 +31,7 @@
     width: 200px;
     font-size: 18px;
     text-align: center;
-    --background: #1508c9; /* Fondo blanco */
+    --background: #e44c11; /* Fondo blanco */
     color: white; /* Texto negro */
     animation: bounce 2s infinite; /* Aplicar la animación de rebote */
   }

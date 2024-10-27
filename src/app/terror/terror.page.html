@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>terror</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background-terror">
+  <div class="audio-controls">
+    <p>Playing: Background Track</p>
+    <ion-button color="danger" (click)="togglePlay()">
+      <ion-icon [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
+    </ion-button>
+    <p>{{ currentTime }} / {{ duration }}</p>
+  </div>
+
+  <!-- Controles de pads adicionales -->
+  <div class="sound-buttons">
+    <ion-button color="tertiary" (click)="playAdditionalSound(1)">Sound 1</ion-button>
+    <ion-button color="warning" (click)="playAdditionalSound(2)">Sound 2</ion-button>
+    <ion-button color="warning" (click)="playAdditionalSound(3)">Sound 3</ion-button>
+    <ion-button color="success" (click)="playAdditionalSound(4)">Sound 4</ion-button>
+  </div>
+</ion-content>
+  
+
+
+
+
