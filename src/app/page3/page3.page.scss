@@ -51,8 +51,13 @@ ion-card {
     width: 80%;
     background: #423300; /* Fondo blanco */
     color: rgb(255, 255, 255); /* Texto negro */
+  }
 
-    
+  ion-button{
+    z-index: 999;
+  }
+  ion-tab{
+    z-index: 1;
   }
   
   /* Animaciones para tarjetas */

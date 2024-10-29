@@ -5,18 +5,36 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="background-terror">
-  <div class="audio-controls">
-    <p>Playing: Background Track</p>
-    <ion-button class="play-pause-btn" color="orange" (click)="togglePlay()">
-      <ion-icon [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
-    </ion-button>
-    <p class="time">{{ currentTime }} / {{ duration }}</p>
+  <div class="audio-container">
+    <div class="sound-waves"></div> <!-- Contenedor para las ondas de sonido -->
+    <div class="audio-controls">
+      <p>Playing: Background Track</p>
+      <ion-button class="play-pause-btn" color="orange" (click)="togglePlay()">
+        <ion-icon [name]="isPlaying ? 'pause' : 'play'"></ion-icon>
+      </ion-button>
+      <p class="time">{{ currentTime }} / {{ duration }}</p>
+    </div>
+
+    <div class="sound-buttons">
+      <ion-button class="btn-orange" (click)="playAdditionalSound(1)">Sound 1</ion-button>
+      <ion-button class="btn-purple" (click)="playAdditionalSound(2)">Sound 2</ion-button>
+      <ion-button class="btn-green" (click)="playAdditionalSound(3)">Sound 3</ion-button>
+      <ion-button class="btn-black" (click)="playAdditionalSound(4)">Sound 4</ion-button>
+    </div>
   </div>
 
-  <div class="sound-buttons">
-    <ion-button class="btn-orange" (click)="playAdditionalSound(1)">Sound 1</ion-button>
-    <ion-button class="btn-purple" (click)="playAdditionalSound(2)">Sound 2</ion-button>
-    <ion-button class="btn-green" (click)="playAdditionalSound(3)">Sound 3</ion-button>
-    <ion-button class="btn-black" (click)="playAdditionalSound(4)">Sound 4</ion-button>
-  </div>
+  <ion-tabs>
+    <!-- Tab bar -->
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="account">
+        <ion-icon name="people-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="contact">
+        <ion-icon name="trophy-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="settings">
+        <ion-icon name="settings"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
 </ion-content>

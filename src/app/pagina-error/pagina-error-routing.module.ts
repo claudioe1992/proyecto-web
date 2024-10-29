@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { Page3Page } from './page3.page';
+import { PaginaErrorPage } from './pagina-error.page';
 
 const routes: Routes = [
-  
   {
     path: '',
-    component: Page3Page
+    component: PaginaErrorPage
   }
 ];
 
@@ -15,6 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class Page3PageRoutingModule {}
-
-
+export class PaginaErrorPageRoutingModule {}

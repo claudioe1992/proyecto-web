@@ -58,6 +58,12 @@
   margin: 20px auto;
 }
 
+ion-button{
+  z-index: 999;
+}
+ion-tab{
+  z-index: 1;
+}
 
 
 .play-pause-btn {
@@ -101,4 +107,84 @@ ion-button:hover {
   100% {
     background-position: center bottom;
   }
+}
+
+
+
+.audio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  height: 100vh; /* Toma el 100% de la altura de la vista */
+}
+
+.sound-waves {
+  width: 100%;
+  height: 50px; /* Ajusta la altura según sea necesario */
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.3) 100%);
+  animation: wave-animation 1s infinite linear; /* Efecto de animación */
+}
+
+@keyframes wave-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.audio-controls {
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columnas */
+  align-items: center; /* Centra horizontalmente */
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  width: 90%; /* Ajusta el ancho a un 90% */
+  max-width: 400px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.audio-controls p {
+  margin: 5px 0; /* Espaciado vertical entre elementos de texto */
+  font-size: 16px;
+  color: #333;
+}
+
+.play-pause-btn {
+  font-size: 20px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.play-pause-btn:hover {
+  transform: scale(1.1);
+}
+
+.play-pause-btn:active {
+  transform: scale(0.9);
+}
+
+.time {
+  margin: 0 10px;
+  font-size: 14px;
+  color: black;
+}
+
+.sound-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.btn-orange, .btn-purple, .btn-green, .btn-black {
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+ion-button:hover {
+  opacity: 0.8; /* Efecto de opacidad al pasar el mouse */
 }
