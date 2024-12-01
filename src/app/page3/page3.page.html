@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ecotronix</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background-image">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Ecotronix</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="logo-container">
+    <ion-button expand="block" class="menu-button" (click)="navigateToComponent()">Terror</ion-button>
+    <ion-button expand="block" class="menu-button" (click)="navigateToGame()">Tropical</ion-button>
+    <ion-button expand="block" class="menu-button" (click)="navigateToError()">Electronica</ion-button>
+    <ion-button expand="block" class="menu-button" (click)="navigateToScores()">Ver puntuacion</ion-button>
+  </div>
+  
+
+  <ion-tabs>
+    <!-- Tab bar -->
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="account">
+        <ion-icon name="people-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="contact">
+        <ion-icon name="trophy-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="settings">
+        <ion-icon name="settings"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>
+
+ 

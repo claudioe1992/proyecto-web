@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Recuperar Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h1>Recuperar Contraseña</h1>
+    <p>Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</p>
+
+    <form [formGroup]="recoveryForm" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input type="email" formControlName="email" required></ion-input>
+      </ion-item>
+      <!-- Mensaje de error para el campo de correo electrónico -->
+      <div *ngIf="recoveryForm.controls['email'].invalid && recoveryForm.controls['email'].touched" class="error-message">
+        Por favor, ingresa un correo electrónico válido
+      </div>
+
+      <ion-button expand="full" type="submit" [disabled]="recoveryForm.invalid">Enviar Enlace de Recuperación</ion-button>
+    </form>
+  </div>
+</ion-content>

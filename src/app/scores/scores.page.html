@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Puntuaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <ion-item *ngFor="let score of scores">
+      <ion-label>
+        <h2>{{ score.initials }}</h2>
+        <p>Puntuación: {{ score.score }} - Página: {{ score.page }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" color="danger" (click)="clearScores()">
+    Borrar Puntuaciones
+  </ion-button>
+</ion-content>

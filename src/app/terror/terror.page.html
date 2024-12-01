@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Juego Compacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="background-juego">
+  <div class="container">
+    <!-- Botones de control -->
+    <div class="controls">
+      <ion-button (click)="startGame()" *ngIf="!gameStarted">Comenzar</ion-button>
+      <ion-button (click)="resetGame()" *ngIf="gameStarted">Reiniciar</ion-button>
+    </div>
+
+    <!-- Cuadrícula de juego -->
+    <div class="grid" *ngIf="gameStarted">
+      <div
+        class="cell"
+        *ngFor="let cell of grid; let i = index"
+        [ngStyle]="{'background-color': cell.color}"
+        (click)="onCellClick(i)"
+      ></div>
+    </div>
+
+    <!-- Información del juego -->
+    <div class="info">
+      <div class="score">Puntuación: {{ score }}</div>
+      <div class="timer">Tiempo restante: {{ timer }}s</div>
+    </div>
+  </div>
+</ion-content>
